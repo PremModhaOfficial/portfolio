@@ -135,11 +135,13 @@
         align-items: center;
         gap: 20px;
         padding: 10px;
+        width: auto;
       }
 
       p {
         @include mobile {
           display: none;
+          width: auto;
         }
       }
 

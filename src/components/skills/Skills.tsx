@@ -113,16 +113,16 @@ const Services = () => {
                                     id={skill.name}
                                     className="box"
                                     whileHover={skill.level === "advanced" ? {
-                                        scale: 1.1, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.5)", rotate: 2
+                                        color: "black", background: "lightgray", scale: 1.1, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.5)", rotate: 2
                                     } : { background: "lightgray", color: "black" }} >
                                     {skill.level === "advanced" && (
                                         <motion.span
                                             className="advanced-label"
-                                            initial={{ opacity: 0, y: -20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ type: "spring", stiffness: 100, damping: 10 }}
+                                            initial={{ opacity: 0 }}
+                                            whileHover={{ opacity: 1 }}
+                                            transition={{ duration: 0.5 }}
                                         >
-                                            Advanced Skill
+                                            Advanced
                                         </motion.span>
                                     )}
                                     <h2>{skill.name}</h2>
@@ -130,7 +130,7 @@ const Services = () => {
                                         {skill.description}
                                     </p>
                                     <button >
-                                        <a href={skill.link} style={{ color: "black" }}> proof </a>
+                                        <a href={skill.link} style={{ color: "black" }}> see how  </a>
                                     </button>
                                 </motion.div>
                             </div>
