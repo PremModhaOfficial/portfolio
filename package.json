@@ -1,5 +1,5 @@
 {
-  "homepage": "https://PremModhaOfficial.github.io/portfolio",
+  "homepage": "https://premmodhaofficial.github.io/portfolio/",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
