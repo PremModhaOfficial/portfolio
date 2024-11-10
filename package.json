@@ -10,10 +10,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.11.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

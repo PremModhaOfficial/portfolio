@@ -21,7 +21,7 @@ const variants = {
 const Contact = () => {
     const ref = useRef<HTMLDivElement | null>(null) as MutableRefObject<HTMLDivElement | null>;
 
-    const formRef = useRef<HTMLFormElement | string>("");
+    const formRef = useRef<HTMLFormElement | null>(null);
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
 
@@ -30,22 +30,23 @@ const Contact = () => {
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        emailjs
-            .sendForm(
-                "service_j3ulj48",
-                "template_6oc20td",
-                formRef.current,
-                "6_U_dMSCjbvifRGzK"
-            )
-            .then(
-                () => {
-                    setSuccess(true);
-                },
-                (error: Error) => {
-                    setError(true);
-                    console.table(error);
-                }
-            );
+        if (formRef.current) {
+            emailjs
+                .sendForm(
+                    "service_j3ulj48",
+                    "template_6oc20td",
+                    formRef.current,
+                    "6_U_dMSCjbvifRGzK"
+                )
+                .then(
+                    () => {
+                        setSuccess(true);
+                    },
+                    () => {
+                        setError(true);
+                    }
+                );
+        }
     };
 
     return (

@@ -1,6 +1,6 @@
 import { MutableRefObject, useRef } from "react";
 import "./skills.scss";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const variants = {
     initial: {
@@ -66,7 +66,6 @@ const skills = [
 
 const Services = () => {
     const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
-    const isInView = useInView(ref, { margin: "-100px" });
 
     return (
         <motion.div
